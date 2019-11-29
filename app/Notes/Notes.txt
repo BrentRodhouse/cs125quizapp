@@ -1,4 +1,10 @@
 Brent {
 Calligraphy: https://github.com/InflationX/Calligraphy
 https://auth0.com/blog/android-development-15-libraries-you-should-be-using/
+We need to put the following code into each activity that we want to have the custom font:
+//Brent: Sets up custom font in this activity
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
 }
