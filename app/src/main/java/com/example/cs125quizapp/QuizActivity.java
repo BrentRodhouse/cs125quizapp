@@ -16,8 +16,23 @@ public class QuizActivity extends AppCompatActivity {
     /** Number of Questions specified by the player in NewQuizActivity.*/
     private int numQuestions;
 
+    /** The total number of questions we end up writing*/
+    private int totalQuestions;
+
     /** Difficulty of quiz specified by player in NewQuizActivity.*/
     private String difficulty;
+
+    /* Arrays will always be incremented in 5's
+    [Question, correct answer, wrong answer, wrong answer, wrong answer, Question, correct answer, wrong answer..., etc.]
+    This way we will be able to take questions and correct answers by multiples of 5 */
+    /** Array with easy questions and answers.*/
+    private String[] easyQuestions;
+
+    /** Array with medium questions and answers.*/
+    private String[] mediumQuestions;
+
+    /** Array with hard questions and answers.*/
+    private String[] hardQuestions;
 
     //Brent: Sets up custom font in this activity
     @Override
@@ -32,5 +47,26 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         numQuestions = intent.getIntExtra("numQuestions", 5);
         difficulty = intent.getStringExtra("difficulty");
+        //change totalQuestions as we write more
+        totalQuestions = 5;
+        if (difficulty.equals("easy")) {
+            easyQuestions = new String[totalQuestions * 5];
+            fillEasyQuestions();
+        } else if (difficulty.equals("medium")) {
+            mediumQuestions = new String[totalQuestions * 5];
+            fillMediumQuestions();
+        } else {
+            hardQuestions = new String[totalQuestions * 5];
+            fillHardQuestions();
+        }
+    }
+    private void fillEasyQuestions() {
+
+    }
+    private void fillMediumQuestions() {
+
+    }
+    private void fillHardQuestions() {
+
     }
 }
