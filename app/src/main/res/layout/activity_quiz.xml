@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:gravity="right"
             android:text="Score: "
-            android:textSize="35dp"/>
+            android:textSize="35dp" />
 
         <TextView
             android:id="@+id/score"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="0"
-            android:textSize="35dp"/>
+            android:textSize="35dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,5 +44,48 @@
             android:contentDescription="question"
             android:text="Question Goes Here"
             tools:text="Question Goes Here" />
+
+        <RadioGroup
+            android:id="@+id/answerRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/answerA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="answerA"
+                tools:text="answerA" />
+
+            <RadioButton
+                android:id="@+id/answerB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="answerB"
+                tools:text="answerB" />
+
+            <RadioButton
+                android:id="@+id/answerC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="answerC"
+                tools:text="answerC" />
+
+            <RadioButton
+                android:id="@+id/answerD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="answerD"
+                tools:text="answerD" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Answer"
+            tools:text="Submit Answer" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

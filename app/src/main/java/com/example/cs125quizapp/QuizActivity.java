@@ -5,6 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
@@ -34,6 +42,12 @@ public class QuizActivity extends AppCompatActivity {
     /** Array with hard questions and answers.*/
     private String[] hardQuestions;
 
+    /** Keeps track of which answer is selected by the user.*/
+    private int answerSelected;
+
+    /** Keeps track of the actual answer to the question.*/
+    private int correctAnswer;
+
     //Brent: Sets up custom font in this activity
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -59,12 +73,61 @@ public class QuizActivity extends AppCompatActivity {
             hardQuestions = new String[totalQuestions * 5];
             fillHardQuestions();
         }
+        RadioGroup answerGroup = findViewById(R.id.answerRadioGroup);
+        answerGroup.setOnCheckedChangeListener((unused, checkedId) -> {
+            if (checkedId == R.id.answerA) {
+                answerSelected = 1;
+            } else if (checkedId == R.id.answerB) {
+                answerSelected = 2;
+            } else if (checkedId == R.id.answerC) {
+                answerSelected = 3;
+            } else if (checkedId == R.id.answerD) {
+                answerSelected = 4;
+            }
+        });
+        displayQuestion();
+        //Reference to submit answer button
+        Button submitButton = findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(unused -> submitButtonClicked());
+    }
+
+    /** Shows the question at the top of the page.*/
+    private void displayQuestion() {
+        TextView question = findViewById(R.id.QuestionView);
+        question.setText(mediumQuestions[0]);
+    }
+    private void submitButtonClicked() {
+
     }
     private void fillEasyQuestions() {
 
     }
     private void fillMediumQuestions() {
-
+        String str = "";
+        StringBuffer buf = new StringBuffer();
+        InputStream is = null;
+        ArrayList<String> lines = new ArrayList<String>();
+        try {
+            is = this.getApplicationContext().getAssets().open("mediumQuestions.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            if (is != null) {
+                while ((str = reader.readLine()) != null) {
+                    buf.append(str + "\n" );
+                    lines.add(str);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { is.close(); } catch (Throwable ignore) {}
+        }
+        for (int i = 0; i < totalQuestions; i++) {
+            mediumQuestions[0 + 5 * i] = lines.get(0 + 5 * i);
+            mediumQuestions[1 + 5 * i] = lines.get(1 + 5 * i);
+            mediumQuestions[2 + 5 * i] = lines.get(2 + 5 * i);
+            mediumQuestions[3 + 5 * i] = lines.get(3 + 5 * i);
+            mediumQuestions[4 + 5 * i] = lines.get(4 + 5 * i);
+        }
     }
     private void fillHardQuestions() {
 
