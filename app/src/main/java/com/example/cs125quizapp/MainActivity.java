@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.container, MainFragment.newInstance())
                     .commitNow();
         }
-
+        //startActivity(new Intent(this, EndActivity.class));
         Button createGame = findViewById(R.id.createQuiz);
         createGame.setOnClickListener(v -> {
             startActivity(new Intent(this, NewQuizActivity.class));

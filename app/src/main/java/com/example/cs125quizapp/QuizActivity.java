@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -13,6 +14,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
@@ -30,17 +33,7 @@ public class QuizActivity extends AppCompatActivity {
     /** Difficulty of quiz specified by player in NewQuizActivity.*/
     private String difficulty;
 
-    /* Arrays will always be incremented in 5's
-    [Question, correct answer, wrong answer, wrong answer, wrong answer, Question, correct answer, wrong answer..., etc.]
-    This way we will be able to take questions and correct answers by multiples of 5 */
-    /** Array with easy questions and answers.*/
-    private String[] easyQuestions;
-
-    /** Array with medium questions and answers.*/
-    private String[] mediumQuestions;
-
-    /** Array with hard questions and answers.*/
-    private String[] hardQuestions;
+   private Question[] questions;
 
     /** Keeps track of which answer is selected by the user.*/
     private int answerSelected;
@@ -48,10 +41,27 @@ public class QuizActivity extends AppCompatActivity {
     /** Keeps track of the actual answer to the question.*/
     private int correctAnswer;
 
+    private int counter = 0;
+
     //Brent: Sets up custom font in this activity
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
+    class Question {
+        private String question;
+        private List<String> list;
+        private String correct;
+        Question(String setQuestion, String setFirst, String setSecond, String setThird, String setFourth) {
+            question = setQuestion;
+            correct = setFirst;
+            list = new ArrayList();
+            list.add(setFirst);
+            list.add(setSecond);
+            list.add(setThird);
+            list.add(setFourth);
+            Collections.shuffle(list);
+        }
     }
 
     @Override
@@ -63,16 +73,7 @@ public class QuizActivity extends AppCompatActivity {
         difficulty = intent.getStringExtra("difficulty");
         //change totalQuestions as we write more
         totalQuestions = 5;
-        if (difficulty.equals("easy")) {
-            easyQuestions = new String[totalQuestions * 5];
-            fillEasyQuestions();
-        } else if (difficulty.equals("medium")) {
-            mediumQuestions = new String[totalQuestions * 5];
-            fillMediumQuestions();
-        } else {
-            hardQuestions = new String[totalQuestions * 5];
-            fillHardQuestions();
-        }
+        //fillQuestions(difficulty);
         RadioGroup answerGroup = findViewById(R.id.answerRadioGroup);
         answerGroup.setOnCheckedChangeListener((unused, checkedId) -> {
             if (checkedId == R.id.answerA) {
@@ -85,7 +86,7 @@ public class QuizActivity extends AppCompatActivity {
                 answerSelected = 4;
             }
         });
-        displayQuestion();
+        //displayQuestion();
         //Reference to submit answer button
         Button submitButton = findViewById(R.id.submitButton);
         submitButton.setOnClickListener(unused -> submitButtonClicked());
@@ -94,21 +95,34 @@ public class QuizActivity extends AppCompatActivity {
     /** Shows the question at the top of the page.*/
     private void displayQuestion() {
         TextView question = findViewById(R.id.QuestionView);
-        question.setText(mediumQuestions[0]);
+        RadioButton a = findViewById(R.id.answerA);
+        RadioButton b = findViewById(R.id.answerB);
+        RadioButton c = findViewById(R.id.answerC);
+        RadioButton d = findViewById(R.id.answerD);
+        question.setText(questions[counter].question);
+        a.setText(questions[counter].list.get(0));
+        b.setText(questions[counter].list.get(1));
+        c.setText(questions[counter].list.get(2));
+        d.setText(questions[counter].list.get(3));
+        //Reference to submit answer button
+        Button submitButton = findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(unused -> submitButtonClicked());
     }
     private void submitButtonClicked() {
-
+        RadioGroup group = findViewById(R.id.answerRadioGroup);
+        group.setOnCheckedChangeListener((unused, checkedId) -> {
+            RadioButton chosen = findViewById(checkedId);
+            //if chosen.getText().equals()
+        });
     }
-    private void fillEasyQuestions() {
 
-    }
-    private void fillMediumQuestions() {
+    private void fillQuestions(String diff) {
         String str = "";
         StringBuffer buf = new StringBuffer();
         InputStream is = null;
         ArrayList<String> lines = new ArrayList<String>();
         try {
-            is = this.getApplicationContext().getAssets().open("mediumQuestions.txt");
+            is = this.getApplicationContext().getAssets().open(difficulty + "Questions.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             if (is != null) {
                 while ((str = reader.readLine()) != null) {
@@ -122,14 +136,9 @@ public class QuizActivity extends AppCompatActivity {
             try { is.close(); } catch (Throwable ignore) {}
         }
         for (int i = 0; i < totalQuestions; i++) {
-            mediumQuestions[0 + 5 * i] = lines.get(0 + 5 * i);
-            mediumQuestions[1 + 5 * i] = lines.get(1 + 5 * i);
-            mediumQuestions[2 + 5 * i] = lines.get(2 + 5 * i);
-            mediumQuestions[3 + 5 * i] = lines.get(3 + 5 * i);
-            mediumQuestions[4 + 5 * i] = lines.get(4 + 5 * i);
+            questions[i] = new Question(lines.get(5 * i), lines.get(1 + 5 * i), lines.get(2 + 5 * i), lines.get(3 + 5 * i), lines.get(4 + 5 * i));
+
         }
     }
-    private void fillHardQuestions() {
 
-    }
 }
