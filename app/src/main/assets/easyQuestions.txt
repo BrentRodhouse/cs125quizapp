@@ -1,0 +1,25 @@
+Who had a sorting algorithm named after them? (Easy)
+Tim(Easy)
+Jim
+Tom
+Kim
+2urmum(Easy)
+2Tim(Easy)
+2Jim
+2Tom
+2Kim
+3Who had a(Easy)
+3Tim(Easy)
+3Jim
+3Tom
+3Kim
+4Who had(Easy)
+4Tim(Easy)
+4Jim
+4Tom
+4Kim
+5Who(Easy)
+5Tim(Easy)
+5Jim
+5Tom
+5Kim

@@ -65,8 +65,14 @@ public class NewQuizActivity extends AppCompatActivity {
         if (!numQuestions.getText().toString().equals("")) {
             intent.putExtra("numQuestions", Integer.parseInt(numQuestions.getText().toString()));
             if (difficulty != null) {
-                intent.putExtra("difficulty", difficulty);
-                startActivity(intent);
+                if (Integer.parseInt(numQuestions.getText().toString()) <= 0) {
+                    Toast.makeText(this, "Invalid number of questions", Toast.LENGTH_LONG).show();
+                } else if (Integer.parseInt(numQuestions.getText().toString()) > 10) {
+                    Toast.makeText(this, "That's too many questions!", Toast.LENGTH_LONG).show();
+                } else {
+                    intent.putExtra("difficulty", difficulty);
+                    startActivity(intent);
+                }
             } else {
                 Toast.makeText(this,"You didn't specify a difficulty!", Toast.LENGTH_LONG).show();
             }
