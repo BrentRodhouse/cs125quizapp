@@ -40,8 +40,10 @@
         <TextView
             android:id="@+id/QuestionView"
             android:layout_width="match_parent"
-            android:layout_height="84dp"
+            android:layout_height="100dp"
             android:contentDescription="question"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
             android:text="Question Goes Here"
             android:textSize="25dp"
             tools:text="Question Goes Here" />

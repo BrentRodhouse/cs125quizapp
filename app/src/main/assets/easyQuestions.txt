@@ -1,4 +1,4 @@
-Who had a sorting algorithm named after them? (Easy)
+Who had a sorting algorithm named after them?
 Tim
 Jim
 Tom
@@ -8,18 +8,47 @@ MTDash
 MTD Bus
 Illini Bus
 MTDab
-3Who had a(Easy)
-3Tim(Easy)
-3Jim
-3Tom
-3Kim
-4Who had(Easy)
-4Tim(Easy)
-4Jim
-4Tom
-4Kim
-5Who(Easy)
-5Tim(Easy)
-5Jim
-5Tom
-5Kim
+What is the name of Geoff's Dog?
+Chuchu
+Xyz
+ChooChoo
+Qwerty
+Which type of Java variable can you use to store a number?
+int
+String
+number
+num
+Which of the following is a boolean value?
+true
+whack
+aight
+fake
+What is the wrapper class for the primitive type int?
+Integer
+Int
+Number
+IntWrapper
+How can you make a class inherit from another class?
+extends keyword
+inherit keyword
+implements keyword
+extend keyword
+What is the runtime for walking through an array?
+O(n)
+O(n^2)
+O(n log(n))
+O(log(n))
+How many parents does a Tree Node have?
+1
+2
+5
+It can have any number of parents
+What is the correct answer to a recursion question?
+This question
+Just do it iteratively, recursion=lame
+Idk, something to do with BinaryTree
+What is the Java compiler called?
+javac
+java
+jvc
+espresso

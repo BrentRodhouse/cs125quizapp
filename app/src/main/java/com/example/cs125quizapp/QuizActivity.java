@@ -133,6 +133,10 @@ public class QuizActivity extends AppCompatActivity {
         RadioGroup group = findViewById(R.id.answerRadioGroup);
         int radioButtonID = group.getCheckedRadioButtonId();
         RadioButton chosen = group.findViewById(radioButtonID);
+        if (chosen == null) {
+            Toast.makeText(this, "You didn't specify an answer!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (chosen.getText().equals(selectedQuestions[counter].getCorrect())) {
             Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
             score++;
