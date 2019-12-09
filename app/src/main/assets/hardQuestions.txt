@@ -1,25 +1,50 @@
-Who had a sorting algorithm named after them? (Hard)
-Tim
-Jim(Hard)
-Tom
-Kim
-2urmumm(Hard)
-2Tim(Hard)
-2Jim
-2Tom
-2Kim
-3Who had a(Hard)
-3Tim(Hard)
-3Jim
-3Tom
-3Kim
-4Who had(Hard)
-4Tim(Hard)
-4Jim
-4Tom
-4Kim
-5Who(Hard)
-5Tim(Hard)
-5Jim
-5Tom
-5Kim
+Which sorting algorithm utilizes a partition function?
+Quicksort
+Merge Sort
+Bubble Sort
+Insertion Sort
+Which of the following is not a java List class?
+AbstractArrayList
+LinkedList
+ArrayList
+AbstractSequentialList
+What makes up a function signature?
+Function name and number and type of input variables
+Function name and output type
+Function name and number of input variables
+Type of input and output variables.
+What is (true || !false) && (!true || true)?
+!false
+!true
+false
+!!false
+What is the correct answer to a recursion question?
+This question
+Just do it iteratively, recursion=lame
+Idk, something to do with BinaryTree
+Another recursion question
+How many chapters were in Coders?
+11
+10
+9
+12
+What language can Android apps not be written in?
+Python
+C++
+Java
+Kotlin
+Which is the default access modifier in Java?
+package-private
+protected
+public
+private
+What keyword is used to make a class variable or method?
+static
+class
+unique
+protected
+Which of these is not a keyword in Java?
+consort
+transient
+enum
+do

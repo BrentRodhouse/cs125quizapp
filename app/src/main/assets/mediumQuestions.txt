@@ -1,25 +1,50 @@
-Who had a sorting algorithm named after them?
-Tim
-Jim
-Tom
-Kim
-2urmum
-2Tim
-2Jim
-2Tom
-2Kim
-3Who had a
-3Tim
-3Jim
-3Tom
-3Kim
-4Who had
-4Tim
-4Jim
-4Tom
-4Kim
-5Who
-5Tim
-5Jim
-5Tom
-5Kim
+What does the height in a binary tree rely on?
+Root and amount of leafs
+Root and furthest leaf
+Number of subtrees
+Number of nodes
+How many base cases can recursion take?
+Infinite
+0
+1
+2
+Which of the following isn’t a sorting algorithm
+Quick Insertion Sort
+Bubble Sort
+Heapsort
+Merge Sort
+How is most of the internet connected?
+Fiber wires
+Copper wires
+Wireless
+Ethernet cables
+Data is transferred over the internet through ____?
+Packets
+Packages
+Boxes
+Sets
+Which of the following is not a primitive type?
+String
+Int
+Double
+Char
+Which of the following is not a java loop?
+Do for loop
+While loop
+Do while loop
+For loop
+Which of the following is not a java keyword?
+Compares
+This
+Throw
+Implements
+How many homework questions have we had?
+Over 50
+Over 100
+Over 9000
+Over 20
+Which of the following is the oldest programming language?
+C++
+Java
+Python
+Javascript

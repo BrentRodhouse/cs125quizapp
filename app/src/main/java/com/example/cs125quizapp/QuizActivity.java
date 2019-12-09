@@ -89,7 +89,7 @@ public class QuizActivity extends AppCompatActivity {
         difficulty = intent.getStringExtra("difficulty");
         //System.out.println(difficulty);
         //change totalQuestions as we write more
-        totalQuestions = 5;
+        totalQuestions = 10;
         fillQuestions(difficulty);
         selectQuestions();
         RadioGroup answerGroup = findViewById(R.id.answerRadioGroup);

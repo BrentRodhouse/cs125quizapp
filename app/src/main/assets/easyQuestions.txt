@@ -43,10 +43,6 @@ How many parents does a Tree Node have?
 2
 5
 It can have any number of parents
-What is the correct answer to a recursion question?
-This question
-Just do it iteratively, recursion=lame
-Idk, something to do with BinaryTree
 What is the Java compiler called?
 javac
 java
