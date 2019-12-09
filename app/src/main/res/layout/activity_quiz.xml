@@ -43,6 +43,7 @@
             android:layout_height="84dp"
             android:contentDescription="question"
             android:text="Question Goes Here"
+            android:textSize="25dp"
             tools:text="Question Goes Here" />
 
         <RadioGroup
@@ -55,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answerA"
+                android:textSize="20dp"
                 tools:text="answerA" />
 
             <RadioButton
@@ -62,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answerB"
+                android:textSize="20dp"
                 tools:text="answerB" />
 
             <RadioButton
@@ -69,6 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answerC"
+                android:textSize="20dp"
                 tools:text="answerC" />
 
             <RadioButton
@@ -76,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answerD"
+                android:textSize="20dp"
                 tools:text="answerD" />
         </RadioGroup>
 
@@ -84,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit Answer"
+            android:textSize="20dp"
             tools:text="Submit Answer" />
 
     </LinearLayout>

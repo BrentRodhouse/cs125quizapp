@@ -114,6 +114,7 @@ public class QuizActivity extends AppCompatActivity {
 
     /** Shows the question at the top of the page.*/
     private void displayQuestion() {
+        setTitle("Question " + (counter + 1) + "/" + numQuestions);
         TextView question = findViewById(R.id.QuestionView);
         RadioButton a = findViewById(R.id.answerA);
         RadioButton b = findViewById(R.id.answerB);

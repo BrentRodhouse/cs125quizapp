@@ -1,13 +1,13 @@
 Who had a sorting algorithm named after them? (Easy)
-Tim(Easy)
+Tim
 Jim
 Tom
 Kim
-2urmum(Easy)
-2Tim(Easy)
-2Jim
-2Tom
-2Kim
+What is the name of Ben Nordick's app on the Google Play Store?
+MTDash
+MTD Bus
+Illini Bus
+MTDab
 3Who had a(Easy)
 3Tim(Easy)
 3Jim
